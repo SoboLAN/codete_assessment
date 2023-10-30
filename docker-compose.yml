@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+
+  postgres:
+    image: postgres:13.12-alpine
+    container_name: codete_assessment_postgresql
+    environment:
+      POSTGRES_DB: assessment
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+    ports:
+      - "5434:5432"
+    volumes:
+      - psql:/var/lib/postgresql/data
+
+
+  app:
+    build:
+      context: .
+      dockerfile: .docker/php-fpm/Dockerfile
+    restart: unless-stopped
+    environment:
+      APP_ENV: "dev"
+    depends_on:
+      - postgres
+    working_dir: /var/www/app
+    volumes:
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro
+      - ./:/var/www/app:rw,cached
+      - tmp:/tmp/app/tmp/cache/
+

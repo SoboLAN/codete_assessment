@@ -1,0 +1,48 @@
+{
+  "name": "radumurzea/codete-ddd-assignment",
+  "type": "project",
+  "description": "An assignment project applying Domain-Driven Design and Hexagonal Architecture",
+  "require": {
+    "php": "^8.1",
+
+    "ext-apcu": "*",
+    "ext-json": "*",
+    "ext-zend-opcache": "*",
+    "ext-pdo": "*",
+
+    "symfony/framework-bundle": "5.4.*",
+    "symfony/dotenv": "5.4.*",
+    "symfony/yaml": "5.4.*",
+    "symfony/validator": "5.4.*",
+    "symfony/cache": "5.4.*",
+
+    "ramsey/uuid": "4.7.*",
+
+    "doctrine/dbal": "3.7.*",
+    "doctrine/orm": "2.16.*",
+
+    "monolog/monolog": "3.5.*"
+  },
+  "require-dev": {
+    "ext-xdebug": "*",
+
+    "behat/behat": "^3.13",
+    "friends-of-behat/mink-extension": "2.6.1",
+    "friends-of-behat/symfony-extension": "2.3.1",
+    "behat/mink-browserkit-driver": "2.1.0",
+
+    "phpunit/phpunit": "9.6.*",
+
+    "symfony/error-handler": "5.4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Codete\\Assessment\\": ["src"]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Codete\\Assessment\\Tests\\": ["tests"]
+    }
+  }
+}
