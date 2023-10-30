@@ -1,7 +1,7 @@
 {
   "name": "radumurzea/codete-ddd-assignment",
   "type": "project",
-  "description": "An assignment project applying Domain-Driven Design and Hexagonal Architecture",
+  "description": "An assignment project applying Domain-Driven Design",
   "require": {
     "php": "^8.1",
 
